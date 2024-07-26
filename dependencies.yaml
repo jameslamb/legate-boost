@@ -41,12 +41,15 @@ dependencies:
       - output_types: [conda]
         packages:
           - openblas
+          - scikit-build-core>=0.9.8
+      - output_types: [pyproject, requirements]
+        packages:
+          - scikit-build-core[pyproject]>=0.9.8
       - output_types: [conda, pyproject, requirements]
         packages:
           - cmake>=3.24.0,!=3.30.0
           - &legate_core legate-core==24.06.*
-          - scikit-build>=0.18.0
-          - setuptools>=70.0
+          - ninja>=1.1.1.1
   build_tools:
     common:
       - output_types: [conda]
